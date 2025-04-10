@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142 70% 35%;
+    /* GoFundMe green */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 30 10% 96%;
+    /* Warm beige */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 142 84% 95%;
+    /* Light green accent */
+    --accent-foreground: 142 70% 35%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 70% 35%;
+    /* GoFundMe green */
+
+    --radius: 0.75rem;
+    /* Rounded corners like GoFundMe */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 70% 35%;
+    /* GoFundMe green */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 70% 35%;
+    /* GoFundMe green */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+/* Styles pour les éléments de prose */
+.prose h3 {
+  @apply text-lg font-semibold mt-4 mb-2;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc pl-5 mb-4;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+/* Styles inspirés de GoFundMe */
+.gofundme-card {
+  @apply rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden;
+}
+
+.gofundme-button {
+  @apply bg-gofundme-600 hover:bg-gofundme-700 text-white font-medium rounded-full transition-colors;
+}
+
+.gofundme-progress-bar {
+  @apply h-2.5 w-full overflow-hidden rounded-full bg-gray-100;
+}
+
+.gofundme-progress-fill {
+  @apply h-full bg-gofundme-600;
+}
+
+.gofundme-section {
+  @apply py-12 md:py-16;
+}
+
+.gofundme-section-alt {
+  @apply py-12 md:py-16 bg-warmgray-50;
+}
+
+.gofundme-heading {
+  @apply text-2xl font-bold text-gray-900 mb-6;
+}
+
+.gofundme-subheading {
+  @apply text-lg font-medium text-gray-800 mb-4;
+}
+
+.gofundme-text {
+  @apply text-gray-600;
+}
+
+.gofundme-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gofundme-100 text-gofundme-800;
+}
+
+.gofundme-avatar {
+  @apply relative overflow-hidden rounded-full border border-gray-200;
+}
+
+.gofundme-link {
+  @apply text-gofundme-600 hover:text-gofundme-700 font-medium;
+}
+
+.gofundme-category-icon {
+  @apply w-16 h-16 flex items-center justify-center rounded-full bg-gofundme-50 text-gofundme-600 mb-4;
+}
+
+/* Masquer la barre de défilement pour les conteneurs de défilement */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
